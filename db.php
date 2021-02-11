@@ -32,7 +32,6 @@ class Database
 
     public function bindAndExecute($values = [])
     {
-
         for ($i = 0; $i < count($values); $i += 2) {
             $this->statement->bindValue($values[$i], $values[$i + 1]);
         }
@@ -45,5 +44,4 @@ class Database
     {
         return $this->statement->fetch();
     }
-
 }
