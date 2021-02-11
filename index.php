@@ -4,8 +4,8 @@ session_start();
 $db = new Database();
 
 if ($_POST) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = htmlspecialchars($_POST['email']);
+    $password = htmlspecialchars($_POST['password']);
 
     $sql = 'SELECT * FROM users WHERE email = :email LIMIT 1';
     $user = $db->prepare($sql)->bindAndExecute(['email', $email])->getOne();
