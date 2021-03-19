@@ -1,4 +1,6 @@
 <?php
+// Written by Magnus Lundstrøm and Adam Daniel Toth
+
 require __DIR__ . '/db.php';
 session_start();
 $db = new Database();
